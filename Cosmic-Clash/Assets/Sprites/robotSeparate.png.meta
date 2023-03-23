@@ -148,44 +148,44 @@ TextureImporter:
         rgba: 4278255360
     - name: leftArm
       guid: 5e1c6fe1827cd2d47a20465158011055
-      position: {x: 662.2357, y: -77.340935, z: 0}
-      rotation: {x: 0, y: -0, z: 0.99949217, w: 0.031866238}
-      length: 227.65277
+      position: {x: 657.40186, y: -64.45074, z: 0}
+      rotation: {x: 0, y: -0, z: 0.9999749, w: 0.007090585}
+      length: 227.2125
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: bone_5
       guid: f19089e1ff727134ea9b23cc2d413062
-      position: {x: 227.65283, y: 0.000015958045, z: 0}
-      rotation: {x: 0, y: 0, z: -0.032469787, w: 0.99947274}
-      length: 138.10074
+      position: {x: 227.21243, y: 0.00014412454, z: 0}
+      rotation: {x: 0, y: 0, z: 0.0011320336, w: 0.99999934}
+      length: 135.35771
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: bone_6
       guid: b11b63b058bad254b8f2176b4a038f8b
-      position: {x: 138.10075, y: -0.000029349876, z: 0}
-      rotation: {x: 0, y: 0, z: 0.0046354546, w: 0.99998933}
-      length: 81.1419
+      position: {x: 135.35776, y: 0.0012989587, z: 0}
+      rotation: {x: 0, y: 0, z: -0.14496998, w: 0.9894361}
+      length: 81.02947
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: rightArm
       guid: 87a31019bfcfb534893cba9918ae65f4
-      position: {x: 641.28925, y: -290.02972, z: 0}
-      rotation: {x: 0, y: -0, z: -0.99833506, w: 0.057681672}
-      length: 223.84595
+      position: {x: 644.5118, y: -309.3651, z: 0}
+      rotation: {x: 0, y: -0, z: -0.999898, w: 0.014282651}
+      length: 225.67108
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: bone_8
       guid: c7c316340b4b90e4fb2f547a9578470e
-      position: {x: 223.84598, y: 0.00016247708, z: 0}
-      rotation: {x: 0, y: 0, z: 0.04696203, w: 0.9988967}
+      position: {x: 225.6711, y: -0.0002493051, z: 0}
+      rotation: {x: 0, y: 0, z: 0.09028673, w: 0.9959159}
       length: 131.78056
       parentId: 6
       color:
@@ -193,8 +193,8 @@ TextureImporter:
         rgba: 4278255488
     - name: bone_9
       guid: 5778efb89e055644686e8642118df728
-      position: {x: 131.78056, y: -0.000018129691, z: 0}
-      rotation: {x: 0, y: 0, z: -0.10450191, w: 0.9945247}
+      position: {x: 131.78052, y: -0.00003214946, z: 0}
+      rotation: {x: 0, y: 0, z: -0.10450192, w: 0.9945247}
       length: 85.39777
       parentId: 7
       color:
@@ -221,8 +221,8 @@ TextureImporter:
     - name: bone_12
       guid: da505e775ae60b64cb180139b67c487f
       position: {x: 153.07988, y: -0.0000040052328, z: 0}
-      rotation: {x: 0, y: 0, z: -0.21959625, w: 0.9755908}
-      length: 69.90033
+      rotation: {x: 0, y: 0, z: -0.36562675, w: 0.9307616}
+      length: 88.66817
       parentId: 10
       color:
         serializedVersion: 2
@@ -231,25 +231,25 @@ TextureImporter:
       guid: ebd0b18568c6ef9499a3ac36e84c1681
       position: {x: 273.04132, y: 254.40636, z: 0}
       rotation: {x: 0, y: -0, z: -0.99993545, w: 0.011362384}
-      length: 177.24063
+      length: 177.24062
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: bone_14
       guid: 01764ae6a0b5094458e31fc0e64c870a
-      position: {x: 177.24062, y: 0.000008900694, z: 0}
-      rotation: {x: 0, y: 0, z: -0.11730721, w: 0.9930957}
-      length: 159.0603
+      position: {x: 177.2406, y: 0.00000890073, z: 0}
+      rotation: {x: 0, y: 0, z: -0.010205838, w: 0.9999479}
+      length: 157.93806
       parentId: 12
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: bone_15
       guid: aab7f3fe556cc3e48a949d25555574f8
-      position: {x: 159.06033, y: 0.000002957544, z: 0}
-      rotation: {x: 0, y: 0, z: -0.16502918, w: 0.9862887}
-      length: 63.02552
+      position: {x: 157.97092, y: -1.6106201, z: 0}
+      rotation: {x: 0, y: 0, z: -0.43966246, w: 0.8981631}
+      length: 86.12966
       parentId: 13
       color:
         serializedVersion: 2
