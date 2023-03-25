@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public int jumpForce = 300;
 
     private Rigidbody2D _rigidbody;
+    private Animator _animator; 
 
     public LayerMask groundLevel;
     public Transform lFoot;
