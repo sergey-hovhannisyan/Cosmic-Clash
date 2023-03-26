@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public int jumpForce = 300;
 
     private Rigidbody2D _rigidbody;
+    private Animator _animator; 
 
     public LayerMask groundLevel;
     public Transform lFoot;
@@ -20,12 +21,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         float xSpeed = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+        _animator.SetFloat("Speed", Mathf.Abs(xSpeed));
     }
 
 
