@@ -46,11 +46,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, jumpForce));
             _animator.SetBool("isJumping", true);
         }
+        
 
-        if (lGrounded || rGrounded)
-        {
-            _animator.SetBool("isJumping", false);
-        }
 
 
         // Rotating gun holder
@@ -69,6 +66,13 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(1, -1, 1);
             gunHolderTrans.rotation = Quaternion.Euler(0, 0, rotZ + 90);
+        }
+    }
+    void LateUpdate()
+    {
+        if (lGrounded || rGrounded)
+        {
+            _animator.SetBool("isJumping", false);
         }
     }
 }
