@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.3f, groundLevel);
-        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.3f, groundLevel);
+        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.2f, groundLevel);
+        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.2f, groundLevel);
 
         if (Input.GetButtonDown("Jump") && (lGrounded || rGrounded))
         {
@@ -48,7 +48,10 @@ public class PlayerController : MonoBehaviour
         }
 
         if (lGrounded || rGrounded)
+        {
             _animator.SetBool("isJumping", false);
+        }
+
 
         // Rotating gun holder
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
