@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
    public TextMeshProUGUI levelUI;
    public Image livesUI;
    public Sprite[] livesSprites;
+   public GameObject pauseMenu;
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
         {
@@ -66,5 +67,26 @@ public class GameManager : MonoBehaviour
         lives +=1;
         lives = Math.Min(lives,livesSprites.Length-1);
         livesUI.sprite = livesSprites[lives];
+    }
+    
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    public void Home()
+    {
+        #if !UNITY_WEBGL
+        Application.Quit();
+        #endif
+        # if UNITY_WEBGL
+        SceneManager.LoadScene("Welcome");
+        #endif
+
     }
 }
