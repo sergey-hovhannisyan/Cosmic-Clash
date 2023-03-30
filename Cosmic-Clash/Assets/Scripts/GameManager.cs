@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
    public int lives;
    public int level;
    public bool levelComplete;
-   public TextMeshProUGUI itemCounterUI;
    public TextMeshProUGUI levelUI;
    public Image livesUI;
    public Sprite[] livesSprites;
