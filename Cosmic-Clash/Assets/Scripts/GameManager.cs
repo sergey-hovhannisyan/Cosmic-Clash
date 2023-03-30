@@ -12,4 +12,6 @@ public class GameManager : MonoBehaviour
    // Please, be descriptive: function -> does something to something = startPlayerShootingAnimation()
    // Don't worry if the function or variable names are long :)
    // HAVE FUN!
+
+    
 }
