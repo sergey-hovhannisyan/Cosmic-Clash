@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
     }
     public void IncrementLives(){
         lives +=1;
-        lives = Min(lives,livesSprites.Length-1);
+        lives = Math.Min(lives,livesSprites.Length-1);
         livesUI.sprite = livesSprites[lives];
     }
 }
