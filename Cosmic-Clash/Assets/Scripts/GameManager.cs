@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +15,56 @@ public class GameManager : MonoBehaviour
    // Please, be descriptive: function -> does something to something = startPlayerShootingAnimation()
    // Don't worry if the function or variable names are long :)
    // HAVE FUN!
+   public int lives;
+   public int level;
+   public bool levelComplete;
+   public TextMeshProUGUI itemCounterUI;
+   public TextMeshProUGUI levelUI;
+   public Image livesUI;
+   public Sprite[] livesSprites;
+    private void Awake() {
+        if (FindObjectsOfType<GameManager>().Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
-    
+    void Start(){
+        levelUI.text = "Level " + level;
+        livesUI.sprite = livesSprites[lives];
+    }
+
+    public void nextLevel(){
+        if (levelComplete){
+            if (level == 0){
+                SceneManager.LoadScene("Level 1");
+            }
+            else if (level == 1) {
+                SceneManager.LoadScene("LWevel 2");
+            }
+            else if (level == 2) {
+                SceneManager.LoadScene("Level 3");
+            }
+            else {
+                SceneManager.LoadScene("WinScreen");
+            }
+        }
+        Destroy(gameObject);
+    }
+    public void DecrementLives(){
+        lives -=1;
+        if (lives == 0){
+            SceneManager.LoadScene("Game Over");
+        }
+        livesUI.sprite = livesSprites[lives];
+    }
+    public void IncrementLives(){
+        lives +=1;
+        lives = Min(lives,livesSprites.Length-1);
+        livesUI.sprite = livesSprites[lives];
+    }
 }
