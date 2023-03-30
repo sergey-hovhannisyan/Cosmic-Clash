@@ -16,7 +16,7 @@ public class GunAiming : MonoBehaviour
     {
         armTrans[0].position = gunHoldingTrans[0].position;
         armTrans[1].position = gunHoldingTrans[1].position;
-        Debug.Log(gunHoldingTrans[0].position);
-        Debug.Log(armTrans[0].position);
+        // Debug.Log(gunHoldingTrans[0].position);
+        // Debug.Log(armTrans[0].position);
     }
 }
