@@ -35,26 +35,33 @@ public class GameManager : MonoBehaviour
     }
 
     void Start(){
+        if (level == -1){
+        }
+        else{
         levelUI.text = "Level " + level;
         livesUI.sprite = livesSprites[lives];
+        }   
     }
 
     public void nextLevel(){
         if (levelComplete){
-            if (level == 0){
-                SceneManager.LoadScene("Level 1");
+            if (level == -1){
+                SceneManager.LoadScene("Level1");
+            }
+            else if (level == 0){
+                SceneManager.LoadScene("Level1");
             }
             else if (level == 1) {
-                SceneManager.LoadScene("LWevel 2");
+                SceneManager.LoadScene("Level2");
             }
             else if (level == 2) {
-                SceneManager.LoadScene("Level 3");
+                SceneManager.LoadScene("Level3");
             }
             else {
                 SceneManager.LoadScene("WinScreen");
             }
-        }
         Destroy(gameObject);
+        }
     }
     public void DecrementLives(){
         lives -=1;
@@ -68,7 +75,7 @@ public class GameManager : MonoBehaviour
         lives = Math.Min(lives,livesSprites.Length-1);
         livesUI.sprite = livesSprites[lives];
     }
-    
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -81,12 +88,11 @@ public class GameManager : MonoBehaviour
     }
     public void Home()
     {
-        #if !UNITY_WEBGL
-        Application.Quit();
-        #endif
-        # if UNITY_WEBGL
         SceneManager.LoadScene("Welcome");
-        #endif
+        Destroy(gameObject);
+
+    }
+    public void Restart(){
 
     }
 }
