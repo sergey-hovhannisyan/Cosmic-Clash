@@ -14,10 +14,14 @@ public class GunController : MonoBehaviour
     bool rifleOn = false;
     float rifleTimeInterval = 0.07f;
     int bulletSpeed = 1000;
-    Transform bulletSpawnPos;
+    public Transform bulletSpawnPos;
+
+    private Vector3 mousePos;
+    private Camera mainCam;
 
     void Start()
     {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         totalGuns = gunHolder.transform.childCount;
         guns = new GameObject[totalGuns];
         gunScripts = new GunScript[totalGuns];
@@ -35,6 +39,10 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
+        
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - bulletSpawnPos.position;
+
         if (Input.GetKeyDown(KeyCode.E) && !rifleOn)
         {
             if (currentGunIndex < totalGuns - 1)
@@ -56,15 +64,17 @@ public class GunController : MonoBehaviour
         }
 
         // Shooting for laser and shotgun. Both shoot only once every click
-        //if (Input.GetMouseButtonDown(0))
-        //    gunScripts[currentGunIndex].Shoot();
+        // if (Input.GetMouseButtonDown(0)){
+        //     gunScripts[currentGunIndex].Shoot();
+        // }
+           
 
-        Vector3 fireDirection = gunHolder.transform.rotation * Vector3.forward;
+        //Vector3 fireDirection = gunHolder.transform.rotation * Vector3.forward;
         // Shooting for rifle. Continuous shooting till mouse button up
-        if (Input.GetMouseButton(0) && currentGunIndex == 0)
+        if (Input.GetMouseButton(0))
         {
             //gunScripts[currentGunIndex].isShooting = true;
-            gunScripts[currentGunIndex].Shoot(fireDirection);
+            gunScripts[currentGunIndex].Shoot(direction);
         }
 
         // Check for rifle stop
