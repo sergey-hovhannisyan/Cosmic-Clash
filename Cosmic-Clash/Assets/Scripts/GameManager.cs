@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         lives -=1;
         if (lives == 0){
             SceneManager.LoadScene("Game Over");
+            Destroy(gameObject);
         }
         livesUI.sprite = livesSprites[lives];
     }
