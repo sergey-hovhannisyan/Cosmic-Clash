@@ -13,11 +13,12 @@ public class enemyBullet : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
     }
 
-    private void  OnTriggerEnter2D(Collider2D other) {
-        Console.WriteLine("This is C#");
+    private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")){
             _gameManager.DecrementLives();
         }
-        Destroy(gameObject);
+        if (!other.CompareTag("Enemy")){
+            Destroy(gameObject);
+        }
     }
 }

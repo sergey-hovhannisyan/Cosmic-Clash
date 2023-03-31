@@ -10,9 +10,11 @@ public class shootAtPlayer : MonoBehaviour
 
     private GameObject player;
     private float timeSinceLastFire;
-
+    private Camera mainCamera;
+    private Vector3 viewPos;
     void Start()
     {
+        mainCamera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
         timeSinceLastFire = fireRate;
     }
@@ -30,7 +32,7 @@ public class shootAtPlayer : MonoBehaviour
 
     private void ShootBullet()
     {
-        if (player != null)
+        if (player != null && IsInView())
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -38,5 +40,10 @@ public class shootAtPlayer : MonoBehaviour
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.velocity = direction * bulletSpeed;
         }
+    }
+    private bool IsInView()
+    {
+        viewPos = mainCamera.WorldToViewportPoint(transform.position);
+        return viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1;
     }
 }

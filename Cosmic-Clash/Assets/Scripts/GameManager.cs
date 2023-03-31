@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
    public Image livesUI;
    public Sprite[] livesSprites;
    public GameObject pauseMenu;
+   public TextMeshProUGUI objectiveUI;
+   public int objectiveCounter;
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
         {
@@ -37,12 +39,23 @@ public class GameManager : MonoBehaviour
     void Start(){
         if (level == -1){
         }
-        else{
-        levelUI.text = "Level " + level;
-        livesUI.sprite = livesSprites[lives];
-        }   
+        else {
+            if (level == 1){
+                objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+            }
+            levelUI.text = "Level " + level;
+            livesUI.sprite = livesSprites[lives];
+        }
     }
-
+    public void DecrementObjectiveCounter(){
+        objectiveCounter-=1;
+        if (level == 1) objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+        else objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+        if(objectiveCounter == 0){
+            levelComplete = true;
+            objectiveUI.text = "Mission Complete";
+        }
+    }
     public void nextLevel(){
         if (levelComplete){
             if (level == -1){
@@ -93,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     }
     public void Restart(){
-
+        SceneManager.LoadScene("Level1");
+        Destroy(gameObject);
     }
 }
