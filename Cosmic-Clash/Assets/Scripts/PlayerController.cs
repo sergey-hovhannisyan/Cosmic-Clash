@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.2f, groundLevel);
-        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.2f, groundLevel);
+        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.4f, groundLevel);
+        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.4f, groundLevel);
 
         if (Input.GetButtonDown("Jump") && (lGrounded || rGrounded))
         {

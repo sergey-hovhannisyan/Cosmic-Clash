@@ -40,10 +40,13 @@ public class GameManager : MonoBehaviour
         if (level == -1){
         }
         else {
-            if (level == 1){
+            if (level == 0){
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
             }
-            if (level == 2){
+            else if (level == 1){
+                objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+            }
+            else if (level == 2){
                 objectiveUI.text = "Friends Remaining: " + objectiveCounter;
             }
             levelUI.text = "Level " + level;
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
     public void nextLevel(){
         if (levelComplete){
             if (level == -1){
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Tutorial");
             }
             else if (level == 0){
                 SceneManager.LoadScene("Level1");
@@ -73,11 +76,11 @@ public class GameManager : MonoBehaviour
                 level = 2;
             }
             else if (level == 2) {
-                SceneManager.LoadScene("Level3");
+                SceneManager.LoadScene("Win");
                 level = 3;
             }
             else {
-                SceneManager.LoadScene("WinScreen");
+                SceneManager.LoadScene("Win");
             }
             Destroy(gameObject);
         }

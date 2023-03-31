@@ -19,7 +19,7 @@ public class enemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             if (DecrementLives()) {
-                _gameManager.DecrementObjectiveCounter();
+                if (_gameManager.level != 2) _gameManager.DecrementObjectiveCounter();
                 Destroy(gameObject);
             };
             Destroy(other.gameObject);
