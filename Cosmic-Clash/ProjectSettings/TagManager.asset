@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - JumpPad
   - Enemy
+  - Friend
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,7 @@ public class Bullet : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
-    public float force = 20;
-
+    public float force = 20; 
     // Start is called before the first frame update
     void Start()
     {

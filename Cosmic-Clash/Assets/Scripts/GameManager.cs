@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
    public Image livesUI;
    public Sprite[] livesSprites;
    public GameObject pauseMenu;
+   public TextMeshProUGUI objectiveUI;
+   public int objectiveCounter;
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
         {
@@ -37,36 +39,57 @@ public class GameManager : MonoBehaviour
     void Start(){
         if (level == -1){
         }
-        else{
-        levelUI.text = "Level " + level;
-        livesUI.sprite = livesSprites[lives];
-        }   
+        else {
+            if (level == 0){
+                objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+            }
+            else if (level == 1){
+                objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+            }
+            else if (level == 2){
+                objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+            }
+            levelUI.text = "Level " + level;
+            livesUI.sprite = livesSprites[lives];
+        }
     }
-
+    public void DecrementObjectiveCounter(){
+        objectiveCounter-=1;
+        if (level == 1) objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+        else objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+        if(objectiveCounter == 0){
+            levelComplete = true;
+            objectiveUI.text = "Mission Complete";
+        }
+    }
     public void nextLevel(){
         if (levelComplete){
             if (level == -1){
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Tutorial");
             }
             else if (level == 0){
                 SceneManager.LoadScene("Level1");
+                level = 1;
             }
             else if (level == 1) {
                 SceneManager.LoadScene("Level2");
+                level = 2;
             }
             else if (level == 2) {
-                SceneManager.LoadScene("Level3");
+                SceneManager.LoadScene("Win");
+                level = 3;
             }
             else {
-                SceneManager.LoadScene("WinScreen");
+                SceneManager.LoadScene("Win");
             }
-        Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     public void DecrementLives(){
         lives -=1;
         if (lives == 0){
             SceneManager.LoadScene("Game Over");
+            Destroy(gameObject);
         }
         livesUI.sprite = livesSprites[lives];
     }
@@ -93,6 +116,10 @@ public class GameManager : MonoBehaviour
 
     }
     public void Restart(){
-
+        SceneManager.LoadScene("Level1");
+        Destroy(gameObject);
+    }
+    public void Quit(){
+        Application.Quit();
     }
 }
