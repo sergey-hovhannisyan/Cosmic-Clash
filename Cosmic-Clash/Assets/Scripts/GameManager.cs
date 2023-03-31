@@ -119,4 +119,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
         Destroy(gameObject);
     }
+    public void Quit(){
+        Application.Quit();
+    }
 }
