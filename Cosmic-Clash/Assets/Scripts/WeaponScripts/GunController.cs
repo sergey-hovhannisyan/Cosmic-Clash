@@ -61,7 +61,7 @@ public class GunController : MonoBehaviour
 
         Vector3 fireDirection = gunHolder.transform.rotation * Vector3.forward;
         // Shooting for rifle. Continuous shooting till mouse button up
-        if (Input.GetMouseButtonDown(0) && currentGunIndex == 0)
+        if (Input.GetMouseButton(0) && currentGunIndex == 0)
         {
             //gunScripts[currentGunIndex].isShooting = true;
             gunScripts[currentGunIndex].Shoot(fireDirection);
