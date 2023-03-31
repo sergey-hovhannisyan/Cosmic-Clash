@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
             if (level == 1){
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
             }
+            if (level == 2){
+                objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+            }
             levelUI.text = "Level " + level;
             livesUI.sprite = livesSprites[lives];
         }
@@ -63,17 +66,20 @@ public class GameManager : MonoBehaviour
             }
             else if (level == 0){
                 SceneManager.LoadScene("Level1");
+                level = 1;
             }
             else if (level == 1) {
                 SceneManager.LoadScene("Level2");
+                level = 2;
             }
             else if (level == 2) {
                 SceneManager.LoadScene("Level3");
+                level = 3;
             }
             else {
                 SceneManager.LoadScene("WinScreen");
             }
-        Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     public void DecrementLives(){
