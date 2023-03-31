@@ -75,4 +75,12 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isJumping", false);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("JumpPad"))
+        {
+            _rigidbody.AddForce(new Vector2(0, 1650));
+        }
+    }
 }
