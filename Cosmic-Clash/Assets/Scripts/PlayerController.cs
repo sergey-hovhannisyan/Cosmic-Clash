@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public int speed = 10;
     public int jumpForce = 1000;
 
+    GameManager _gameManager;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
@@ -14,15 +15,17 @@ public class PlayerController : MonoBehaviour
     public Transform lFoot;
     public Transform rFoot;
 
-    public bool lGrounded = false;
-    public bool rGrounded = false;
+    bool lGrounded = false;
+    bool rGrounded = false;
 
+    private bool isHit = false;
     public Transform gunHolderTrans;
     public Transform headTrans;
     private Camera mainCam;
     private Vector3 mousePos;
     void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -82,5 +85,21 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(0, 1650));
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        StartCoroutine(WaitForBulletToPass(other));
+    }
+    private IEnumerator WaitForBulletToPass(Collider2D other)
+    {
+        if (other.CompareTag("EnemyBullet") && !isHit)
+        {
+            isHit = true;
+            Destroy(other.gameObject);
+            _gameManager.DecrementLives();
+        }
+        yield return new WaitForSeconds(0.2f);
+        isHit = false;
     }
 }

@@ -17,8 +17,9 @@ public class healthBar : MonoBehaviour
 
     public bool DecrementLives(){
         currentHealth-=1;
+        if (currentHealth < 0) currentHealth= 0;
         mySprite.sprite = healthBarSprites[currentHealth];
-        if (currentHealth == 0){
+        if (currentHealth <= 0){
             return true;
         }
         return false;
