@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         objectiveCounter-=1;
         if (level == 1) objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
         else objectiveUI.text = "Friends Remaining: " + objectiveCounter;
-        if(objectiveCounter == 0){
+        if(objectiveCounter <= 0){
             levelComplete = true;
             objectiveUI.text = "Mission Complete";
         }
@@ -87,10 +87,12 @@ public class GameManager : MonoBehaviour
     }
     public void DecrementLives(){
         lives -=1;
-        if (lives == 0){
+        if (lives <= 0){
             SceneManager.LoadScene("Game Over");
             Destroy(gameObject);
+            lives = 0;
         }
+
         livesUI.sprite = livesSprites[lives];
     }
     public void IncrementLives(){
