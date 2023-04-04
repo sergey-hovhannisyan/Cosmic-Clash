@@ -20,11 +20,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Enemy
+  - PlayerMiniMap
+  - EnemyMiniMap
+  - MiniMap
   - 
   - 
   - 
