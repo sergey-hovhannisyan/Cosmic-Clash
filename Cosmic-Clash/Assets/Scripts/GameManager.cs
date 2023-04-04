@@ -123,11 +123,13 @@ public class GameManager : MonoBehaviour
     public void Home()
     {
         SceneManager.LoadScene("Welcome");
+        Time.timeScale = 1f;
         Destroy(gameObject);
 
     }
     public void Restart(){
         SceneManager.LoadScene("Level1");
+        Time.timeScale = 1f;
         Destroy(gameObject);
     }
     public void Quit(){
