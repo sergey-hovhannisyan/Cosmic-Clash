@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public TextMeshProUGUI objectiveUI;
     public int objectiveCounter;
+
+    // GunController Section
+    public GunController _playerGunController;
+    private Vector3 mousePos;
+    private Camera mainCam;
+    
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
         {
@@ -32,6 +38,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -125,5 +132,26 @@ public class GameManager : MonoBehaviour
     }
     public void Quit(){
         Application.Quit();
+    }
+
+    // GunController interface methods
+    private Vector3 MousePos()
+    {
+        return mainCam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public void PlayerLeftGunSwap()
+    {
+        _playerGunController.LeftGunSwap();
+    }
+
+    public void PlayerRightGunSwap()
+    {
+        _playerGunController.RightGunSwap();
+    }
+    
+    public void PlayerShoot()
+    {
+        _playerGunController.Shoot(MousePos());
     }
 }
