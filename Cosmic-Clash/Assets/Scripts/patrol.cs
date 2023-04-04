@@ -7,7 +7,7 @@ public class patrol : MonoBehaviour
     public Transform[] waypoints;
     private int _currentWaypointIndex = 0;
     private float _speed = 2f;
-
+    private Vector3 scaleChange = new Vector3(-0.1f, 0.0f, 0.0f);
     private void Update()
     {
         Transform wp = waypoints[_currentWaypointIndex];
@@ -27,13 +27,15 @@ public class patrol : MonoBehaviour
         Quaternion initialRotation = transform.rotation;
         Quaternion targetRotation = transform.rotation * Quaternion.Euler(0, 180, 0);
 
-        while (elapsedTime < 3f)
+        while (transform.localScale.x <= 0.75 && transform.localScale.x >= -0.75)
         {
+            transform.localScale += scaleChange;
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / 3f;
-            transform.rotation = Quaternion.Slerp(initialRotation, targetRotation, t);
             yield return null;
         }
+        transform.localScale += -scaleChange;
+        scaleChange.x = -scaleChange.x;
     }
 
 }
