@@ -11,15 +11,8 @@ public class GunController : MonoBehaviour
     GunScript[] gunScripts;
     public GameObject gunHolder;
 
-    float rifleTimeInterval = 0.07f;
-    int bulletSpeed = 1000;
-
-    private Vector3 mousePos;
-    private Camera mainCam;
-
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         totalGuns = gunHolder.transform.childCount;
         guns = new GameObject[totalGuns];
         gunScripts = new GunScript[totalGuns];
@@ -34,38 +27,30 @@ public class GunController : MonoBehaviour
         currentGunIndex = 0;
     }
 
-    void Update()
+    public void LeftGunSwap()
     {
-        // Setting target direction
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        if (currentGunIndex > 0)
+        {
+            guns[currentGunIndex].SetActive(false);
+            currentGunIndex--;
+            guns[currentGunIndex].SetActive(true);
+        }
+    }
+
+    public void RightGunSwap()
+    {
+        if (currentGunIndex < totalGuns - 1)
+        {
+            guns[currentGunIndex].SetActive(false);
+            currentGunIndex++;
+            guns[currentGunIndex].SetActive(true);
+        }
+    }
+
+    public void Shoot(Vector3 mousePos)
+    {
         Vector3 direction = mousePos - gunHolder.transform.position;
-
-        // Swap 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (currentGunIndex < totalGuns - 1)
-            {
-                guns[currentGunIndex].SetActive(false);
-                currentGunIndex++;
-                guns[currentGunIndex].SetActive(true);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (currentGunIndex > 0)
-            {
-                guns[currentGunIndex].SetActive(false);
-                currentGunIndex--;
-                guns[currentGunIndex].SetActive(true);
-            }
-        }
-        
-        // Calling Current Gun's Shoot Method
-        if (Input.GetMouseButton(0))
-        {
-            gunScripts[currentGunIndex].Shoot(direction);
-        }
+        gunScripts[currentGunIndex].Shoot(direction);
     }
 
 }

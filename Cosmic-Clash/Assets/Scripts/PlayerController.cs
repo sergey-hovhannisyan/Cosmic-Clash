@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int speed = 10;
-    public int jumpForce = 1000;
+    public int speed = 15;
+    public int jumpForce = 1200;
 
     GameManager _gameManager;
     private Rigidbody2D _rigidbody;
@@ -49,9 +49,6 @@ public class PlayerController : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, jumpForce));
             _animator.SetBool("isJumping", true);
         }
-        
-
-
 
         // Rotating gun holder
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -59,7 +56,7 @@ public class PlayerController : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         
 
-        //Changing Character direction
+        // Changing Character direction
         if (mousePos.x < transform.position.x)
         {
             transform.localScale = new Vector3(1, 1, 1);
@@ -70,7 +67,25 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, -1, 1);
             gunHolderTrans.rotation = Quaternion.Euler(0, 0, rotZ + 90);
         }
+
+        // Swap Guns
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _gameManager.PlayerRightGunSwap();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _gameManager.PlayerLeftGunSwap();
+        }
+
+        // Shoot
+        if (Input.GetMouseButton(0))
+        {
+            _gameManager.PlayerShoot();
+        }
     }
+
     void LateUpdate()
     {
         if (lGrounded || rGrounded)
