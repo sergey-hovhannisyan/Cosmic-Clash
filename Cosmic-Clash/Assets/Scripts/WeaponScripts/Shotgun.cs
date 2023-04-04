@@ -8,6 +8,7 @@ public class Shotgun : GunScript
     public Transform spawn;
     public GameObject bullet;
     public AudioClip shotgunShotClip;
+    public AudioClip shotGunLoadClip;
     private float timer;
     float bulletSpeed = 2000f;
     float timeInterval = 1f;
@@ -22,7 +23,8 @@ public class Shotgun : GunScript
 
     private IEnumerator Fire(Vector3 direction)
     {
-        if(canFire){
+
+        if (canFire){
             canFire = false;
             for(int i = 0; i < bullet_num; i++) {
                 GameObject newBullet = Instantiate(bullet, spawn.position, Quaternion.identity);
@@ -30,8 +32,9 @@ public class Shotgun : GunScript
                 bullet_rb.velocity = new Vector2(direction.x * Random.Range(1f, 5f), direction.y * Random.Range(1f, 5f)).normalized * force;
             }
             AudioSource.PlayClipAtPoint(shotgunShotClip, spawn.position, 1f);
+            yield return new WaitForSeconds(0.5f);
+            AudioSource.PlayClipAtPoint(shotGunLoadClip, spawn.position, 1f);
         }
-        yield return 1;
     }
 
     void Update() {
