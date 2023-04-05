@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int speed = 10;
-    public int jumpForce = 1000;
+    public int speed = 15;
+    public int jumpForce = 1200;
 
+    GameManager _gameManager;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
@@ -14,15 +15,17 @@ public class PlayerController : MonoBehaviour
     public Transform lFoot;
     public Transform rFoot;
 
-    public bool lGrounded = false;
-    public bool rGrounded = false;
+    bool lGrounded = false;
+    bool rGrounded = false;
 
+    private bool isHit = false;
     public Transform gunHolderTrans;
     public Transform headTrans;
     private Camera mainCam;
     private Vector3 mousePos;
     void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -38,17 +41,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.2f, groundLevel);
-        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.2f, groundLevel);
+        lGrounded = Physics2D.OverlapCircle(lFoot.position, 0.4f, groundLevel);
+        rGrounded = Physics2D.OverlapCircle(rFoot.position, 0.4f, groundLevel);
 
         if (Input.GetButtonDown("Jump") && (lGrounded || rGrounded))
         {
             _rigidbody.AddForce(new Vector2(0, jumpForce));
             _animator.SetBool("isJumping", true);
         }
-        
-
-
 
         // Rotating gun holder
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         
 
-        //Changing Character direction
+        // Changing Character direction
         if (mousePos.x < transform.position.x)
         {
             transform.localScale = new Vector3(1, 1, 1);
@@ -67,7 +67,25 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, -1, 1);
             gunHolderTrans.rotation = Quaternion.Euler(0, 0, rotZ + 90);
         }
+
+        // Swap Guns
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _gameManager.PlayerRightGunSwap();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _gameManager.PlayerLeftGunSwap();
+        }
+
+        // Shoot
+        if (Input.GetMouseButton(0))
+        {
+            _gameManager.PlayerShoot();
+        }
     }
+
     void LateUpdate()
     {
         if (lGrounded || rGrounded)
@@ -82,5 +100,21 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(0, 1650));
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        StartCoroutine(WaitForBulletToPass(other));
+    }
+    private IEnumerator WaitForBulletToPass(Collider2D other)
+    {
+        if (other.CompareTag("EnemyBullet") && !isHit)
+        {
+            isHit = true;
+            Destroy(other.gameObject);
+            _gameManager.DecrementLives();
+        }
+        yield return new WaitForSeconds(0.2f);
+        isHit = false;
     }
 }

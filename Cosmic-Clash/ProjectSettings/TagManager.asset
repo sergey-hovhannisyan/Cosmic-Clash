@@ -9,6 +9,9 @@ TagManager:
   - Bullet
   - JumpPad
   - Enemy
+  - Friend
+  - EnemyBullet
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -17,11 +20,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Enemy
+  - PlayerMiniMap
+  - EnemyMiniMap
+  - MiniMap
   - 
   - 
   - 
