@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    int totalGuns = 1;
+    public int totalGunsUnlocked = 1;
     public int currentGunIndex;
 
     public GameObject[] guns;
@@ -13,11 +13,16 @@ public class GunController : MonoBehaviour
 
     void Start()
     {
-        totalGuns = gunHolder.transform.childCount;
-        guns = new GameObject[totalGuns];
-        gunScripts = new GunScript[totalGuns];
+        int totalGunsAvailable = gunHolder.transform.childCount;
+        if (totalGunsUnlocked < 1)
+            totalGunsUnlocked = 1;
+        else if (totalGunsUnlocked > totalGunsAvailable)
+            totalGunsUnlocked = totalGunsAvailable;
 
-        for (int i = 0; i < totalGuns; i++)
+        guns = new GameObject[totalGunsAvailable];
+        gunScripts = new GunScript[totalGunsAvailable];
+
+        for (int i = 0; i < totalGunsAvailable; i++)
         {
             guns[i] = gunHolder.transform.GetChild(i).gameObject;
             guns[i].SetActive(false);
@@ -39,7 +44,7 @@ public class GunController : MonoBehaviour
 
     public void RightGunSwap()
     {
-        if (currentGunIndex < totalGuns - 1)
+        if (currentGunIndex < totalGunsUnlocked - 1)
         {
             guns[currentGunIndex].SetActive(false);
             currentGunIndex++;

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
     public GameObject player;
+    public GunController playerGunController;
     
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel() {
         if (levelComplete) {
+            playerGunController.totalGunsUnlocked++;
             if (level == -1) {
                 SceneManager.LoadScene("Tutorial");
             }
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
                 level = 2;
             }
             else if (level == 2) {
-                SceneManager.LoadScene("Win");
+                SceneManager.LoadScene("Level3");
                 level = 3;
             }
             else {
