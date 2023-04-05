@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI objectiveUI;
     public int objectiveCounter;
 
-    // GunController Section
-    public GunController _playerGunController;
+
     private Vector3 mousePos;
     private Camera mainCam;
+    public GameObject player;
     
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -142,18 +142,9 @@ public class GameManager : MonoBehaviour
         return mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    public void PlayerLeftGunSwap()
+    public Vector3 PlayerPosition()
     {
-        _playerGunController.LeftGunSwap();
-    }
-
-    public void PlayerRightGunSwap()
-    {
-        _playerGunController.RightGunSwap();
+        return player.transform.position;
     }
     
-    public void PlayerShoot()
-    {
-        _playerGunController.Shoot(MousePos());
-    }
 }
