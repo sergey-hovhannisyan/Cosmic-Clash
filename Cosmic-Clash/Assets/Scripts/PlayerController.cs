@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("JumpPad"))
         {
-            _rigidbody.AddForce(new Vector2(0, 1650));
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, other.gameObject.GetComponent<JumpPad>().jumpHeight);
         }
     }
 
@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(WaitForBulletToPass(other));
     }
+    
     private IEnumerator WaitForBulletToPass(Collider2D other)
     {
         if (other.CompareTag("EnemyBullet") && !isHit)
