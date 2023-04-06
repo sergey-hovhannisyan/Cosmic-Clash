@@ -12,6 +12,7 @@ TagManager:
   - Friend
   - EnemyBullet
   - Laser
+  - Drone
   layers:
   - Default
   - TransparentFX
