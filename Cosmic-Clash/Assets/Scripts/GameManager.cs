@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI objectiveUI;
     public int objectiveCounter;
 
-    // GunController Section
-    public GunController _playerGunController;
+
     private Vector3 mousePos;
     private Camera mainCam;
+    public GameObject player;
+    public GunController playerGunController;
     
     private void Awake() {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel() {
         if (levelComplete) {
+            playerGunController.totalGunsUnlocked++;
             if (level == -1) {
                 SceneManager.LoadScene("Tutorial");
             }
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
                 level = 2;
             }
             else if (level == 2) {
-                SceneManager.LoadScene("Win");
+                SceneManager.LoadScene("Level3");
                 level = 3;
             }
             else {
@@ -142,18 +144,9 @@ public class GameManager : MonoBehaviour
         return mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    public void PlayerLeftGunSwap()
+    public Vector3 PlayerPosition()
     {
-        _playerGunController.LeftGunSwap();
-    }
-
-    public void PlayerRightGunSwap()
-    {
-        _playerGunController.RightGunSwap();
+        return player.transform.position;
     }
     
-    public void PlayerShoot()
-    {
-        _playerGunController.Shoot(MousePos());
-    }
 }

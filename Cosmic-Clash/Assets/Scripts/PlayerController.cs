@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public Transform headTrans;
     private Camera mainCam;
     private Vector3 mousePos;
+    public GunController gunController;
+
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -71,18 +73,18 @@ public class PlayerController : MonoBehaviour
         // Swap Guns
         if (Input.GetKeyDown(KeyCode.E))
         {
-            _gameManager.PlayerRightGunSwap();
+            gunController.RightGunSwap();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            _gameManager.PlayerLeftGunSwap();
+            gunController.LeftGunSwap();
         }
 
         // Shoot
         if (Input.GetMouseButton(0))
         {
-            _gameManager.PlayerShoot();
+            gunController.Shoot(mousePos);
         }
     }
 
