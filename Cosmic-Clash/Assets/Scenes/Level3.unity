@@ -41262,7 +41262,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 66261a9440ee6a04ea0293186272fb05, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -83276,10 +83276,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 1896387547}
   objectiveUI: {fileID: 1896387546}
   objectiveCounter: 1
-  instructionText: {fileID: 2002774413}
-  instructionMenu: {fileID: 1129448183}
+  instructionText: {fileID: 0}
+  instructionMenu: {fileID: 0}
   player: {fileID: 7987450117269722252}
-  playerGunController: {fileID: 7987450116626920322}
+  playerGunController: {fileID: 0}
 --- !u!114 &3623471996110319621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84199,7 +84199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7987450115574393800}
-  m_LocalRotation: {x: -0.0043333126, y: -0.0022942617, z: 0.95184124, w: 0.3065522}
+  m_LocalRotation: {x: -0.0043333126, y: -0.0022942622, z: 0.9518412, w: 0.30655238}
   m_LocalPosition: {x: 0.30737656, y: 0.18131088, z: 6.2295986e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -85077,7 +85077,6 @@ MonoBehaviour:
   currentGunIndex: 0
   guns: []
   gunHolder: {fileID: 7987450116626920324}
-  totalGunsAvailable: 0
 --- !u!1 &7987450116626920324
 GameObject:
   m_ObjectHideFlags: 0
@@ -85120,7 +85119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7987450116739551879}
-  m_LocalRotation: {x: 0.0046324334, y: -0.0016067887, z: 0.91249424, w: 0.4090602}
+  m_LocalRotation: {x: 0.0046324357, y: -0.0016067899, z: 0.9124942, w: 0.40906048}
   m_LocalPosition: {x: 0.412, y: -0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -85495,7 +85494,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7987450117081546806}
-  m_LocalRotation: {x: -0.000000002188139, y: -0.0000000013942408, z: 0.71309024, w: -0.7010724}
+  m_LocalRotation: {x: -3.15543e-10, y: 4.2901954e-10, z: 0.7130898, w: -0.70107263}
   m_LocalPosition: {x: 0.33267742, y: 0.09851709, z: -4.102364e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -85905,8 +85904,8 @@ MonoBehaviour:
   - {fileID: 7987450115704211542}
   - {fileID: 7987450116423199273}
   m_Bounds:
-    m_Center: {x: 0.024150312, y: 0.15266377, z: 0.03343831}
-    m_Extent: {x: 0.8989027, y: 0.5231595, z: 0.04579799}
+    m_Center: {x: 0.024150312, y: 0.15266383, z: 0.03343831}
+    m_Extent: {x: 0.8989027, y: 0.52315956, z: 0.04579799}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -85932,7 +85931,7 @@ MonoBehaviour:
   gunHolderTrans: {fileID: 7987450116626920325}
   headTrans: {fileID: 7987450117010272007}
   gunController: {fileID: 7987450116626920322}
-  gotShot: {fileID: 8300000, guid: 3037c7334d050424ca5c89d51b6caa0f, type: 3}
+  gotShot: {fileID: 0}
 --- !u!114 &7987450117269722251
 MonoBehaviour:
   m_ObjectHideFlags: 0
