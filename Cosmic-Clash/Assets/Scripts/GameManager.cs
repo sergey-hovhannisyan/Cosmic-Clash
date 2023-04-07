@@ -50,15 +50,16 @@ public class GameManager : MonoBehaviour
         if (level != -1) {
             if (level == 0) {
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
-                instructionText.text = "level0Instruction";
             }
             else if (level == 1) {
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
-                instructionText.text = "level0Instruction";
+                instructionText.text = "level0Instruction mission to kill and go for portal";
+                OpenInstruction();
             }
             else if (level == 2) {
                 objectiveUI.text = "Friends Remaining: " + objectiveCounter;
                 instructionText.text = "level0Instruction";
+                OpenInstruction();
             }
             else if (level == 3) {
                 objectiveUI.text = "Find the Mothership and destroy it!";
@@ -66,7 +67,6 @@ public class GameManager : MonoBehaviour
             OpenInstruction();
             levelUI.text = "Level " + level;
             livesUI.sprite = livesSprites[lives];
-            
         }
     }
 
@@ -83,9 +83,9 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel() {
         if (levelComplete) {
-            playerGunController.totalGunsUnlocked++;
             if (level == -1) {
                 SceneManager.LoadScene("Tutorial");
+                level = 0;
             }
             else if (level == 0) {
                 SceneManager.LoadScene("Level1");
@@ -163,6 +163,11 @@ public class GameManager : MonoBehaviour
     public void OpenInstruction()
     {
         instructionMenu.SetActive(true);
+    }
+    public void OpenInstruction(string text)
+    {
+        instructionMenu.SetActive(true);
+        instructionText.text = text;
     }
 
     public void CloseInstruction()
