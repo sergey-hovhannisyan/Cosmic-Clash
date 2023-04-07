@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public TextMeshProUGUI objectiveUI;
     public int objectiveCounter;
+    public TextMeshProUGUI instructionText;
+    public GameObject instructionMenu;
 
 
     private Vector3 mousePos;
@@ -50,17 +52,23 @@ public class GameManager : MonoBehaviour
         else {
             if (level == 0) {
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+                instructionText.text = "level0Instruction";
             }
             else if (level == 1) {
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
+                instructionText.text = "level0Instruction";
             }
             else if (level == 2) {
                 objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+                instructionText.text = "level0Instruction";
             }
+            OpenInstruction();
             levelUI.text = "Level " + level;
             livesUI.sprite = livesSprites[lives];
+            
         }
     }
+
     public void DecrementObjectiveCounter() {
         objectiveCounter -= 1;
         if (level == 1) objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
@@ -107,7 +115,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void IncrementLives(){
-        lives +=1;
+        lives += 1;
         lives = Math.Min(lives,livesSprites.Length-1);
         livesUI.sprite = livesSprites[lives];
     }
@@ -149,4 +157,14 @@ public class GameManager : MonoBehaviour
         return player.transform.position;
     }
     
+    //Instruction methods
+    public void OpenInstruction()
+    {
+        instructionMenu.SetActive(true);
+    }
+
+    public void CloseInstruction()
+    {
+        instructionMenu.SetActive(false);
+    }
 }
