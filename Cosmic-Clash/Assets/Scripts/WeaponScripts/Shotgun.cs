@@ -10,7 +10,6 @@ public class Shotgun : GunScript
     public AudioClip shotgunShotClip;
     public AudioClip shotGunLoadClip;
     private float timer;
-    float bulletSpeed = 2000f;
     float timeInterval = 1f;
     public bool canFire = true;
     public int bullet_num = 10;
