@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                 OpenInstruction();
             }
             else if (level == 3) {
-                objectiveUI.text = "Find the Mothership and destroy it!";
+                objectiveUI.text = "Destroy the Mothership!";
             }
             OpenInstruction();
             levelUI.text = "Level " + level;
