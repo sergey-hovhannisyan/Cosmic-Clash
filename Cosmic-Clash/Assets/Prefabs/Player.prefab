@@ -170,7 +170,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57148993865254307}
-  m_LocalRotation: {x: -0.0000000018865633, y: -0.0000000010964122, z: 0.71309006, w: -0.7010725}
+  m_LocalRotation: {x: -0.0000000018865562, y: -0.0000000010964166, z: 0.71309024, w: -0.7010722}
   m_LocalPosition: {x: 0.33267742, y: 0.09851709, z: -4.102364e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -707,8 +707,8 @@ MonoBehaviour:
   - {fileID: 57148995782544835}
   - {fileID: 57148994523951036}
   m_Bounds:
-    m_Center: {x: 0.024150312, y: 0.15266389, z: 0.03343831}
-    m_Extent: {x: 0.8989027, y: 0.5231596, z: 0.04579799}
+    m_Center: {x: 0.024150312, y: 0.15266371, z: 0.03343831}
+    m_Extent: {x: 0.8989027, y: 0.52315944, z: 0.04579799}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1015,6 +1015,7 @@ MonoBehaviour:
   currentGunIndex: 0
   guns: []
   gunHolder: {fileID: 57148994322920977}
+  totalGunsAvailable: 0
 --- !u!1 &57148994383759130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1555,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57148994731218706}
-  m_LocalRotation: {x: 0.0046324343, y: -0.0016067886, z: 0.9124943, w: 0.40906015}
+  m_LocalRotation: {x: 0.004632434, y: -0.0016067901, z: 0.9124941, w: 0.4090604}
   m_LocalPosition: {x: 0.412, y: -0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1882,7 +1883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57148995375902301}
-  m_LocalRotation: {x: -0.004333312, y: -0.0022942629, z: 0.9518412, w: 0.3065525}
+  m_LocalRotation: {x: -0.004333314, y: -0.0022942603, z: 0.95184135, w: 0.30655193}
   m_LocalPosition: {x: 0.30737656, y: 0.18131088, z: 6.2295986e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2277,8 +2278,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3634571257831496478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -0.098, y: -0.0059, z: 0}
+  m_LocalScale: {x: 3.2886305, y: 3.437, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 57148994196066576}
