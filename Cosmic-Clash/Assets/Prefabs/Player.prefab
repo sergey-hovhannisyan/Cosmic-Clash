@@ -755,6 +755,7 @@ MonoBehaviour:
   gunHolderTrans: {fileID: 57148994322920976}
   headTrans: {fileID: 57148993936616082}
   gunController: {fileID: 57148994322920983}
+  gotShot: {fileID: 8300000, guid: 3037c7334d050424ca5c89d51b6caa0f, type: 3}
 --- !u!114 &57148994196066590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,7 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be19bda1f22e76b42b2e02174db4bd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalGunsUnlocked: 1
   currentGunIndex: 0
   guns: []
   gunHolder: {fileID: 57148994322920977}
