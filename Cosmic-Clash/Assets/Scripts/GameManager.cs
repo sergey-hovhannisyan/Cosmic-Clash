@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
 
     }
     public void Restart(){
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level" + level);
         Time.timeScale = 1f;
         Destroy(gameObject);
     }
