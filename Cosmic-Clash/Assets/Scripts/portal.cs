@@ -21,7 +21,7 @@ public class portal : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.CompareTag("Player") && _gameManager.levelComplete){
+        if (other.CompareTag("Player") && _gameManager.levelComplete){
             _gameManager.nextLevel();
         }
     }

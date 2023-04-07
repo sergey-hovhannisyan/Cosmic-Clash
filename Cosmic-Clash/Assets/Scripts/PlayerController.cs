@@ -117,6 +117,11 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             _gameManager.DecrementLives();
         }
+        else if (other.CompareTag("Enemy")){
+            isHit = true;
+            other.GetComponent<enemyHealth>().DecrementLives();
+            _gameManager.DecrementLives();
+        }
         yield return new WaitForSeconds(0.2f);
         isHit = false;
     }
