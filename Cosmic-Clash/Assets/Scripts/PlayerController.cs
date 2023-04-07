@@ -102,6 +102,21 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, other.gameObject.GetComponent<JumpPad>().jumpHeight);
         }
+        if (other.gameObject.CompareTag("rifle"))
+        {
+            gunController.UnlockWeapon("rifle");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("shotgun"))
+        {
+            gunController.UnlockWeapon("shotgun");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("laser"))
+        {
+            gunController.UnlockWeapon("laser");
+            Destroy(other.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
