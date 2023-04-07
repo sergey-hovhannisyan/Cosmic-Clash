@@ -103,7 +103,7 @@ MonoBehaviour:
   player: {fileID: 0}
   time: 0.05
   speed: 0.15
-  detectDistance: 20
+  detectDistance: 15
   destroyDistance: 40
 --- !u!50 &1896713302580810539
 Rigidbody2D:

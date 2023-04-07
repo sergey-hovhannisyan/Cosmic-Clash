@@ -41,7 +41,7 @@ public class DroneController : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5);
             weapon.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
-        if (Vector2.Distance(dronePos, playerPos) > destroyDistance) {
+        if (delivered && Vector2.Distance(dronePos, playerPos) > destroyDistance) {
             Destroy(gameObject);
         }
     }
