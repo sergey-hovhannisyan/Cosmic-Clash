@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                 OpenInstruction();
             }
             else if (level == 3) {
-                objectiveUI.text = "Find the Mothership and destroy it!";
+                objectiveUI.text = "Destroy the Mothership!";
             }
             OpenInstruction();
             levelUI.text = "Level " + level;
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void DecrementLives() {
         lives -= 1;
         if (lives <= 0) {
-            SceneManager.LoadScene("Game Over");
+            SceneManager.LoadScene("Game Over " + level);
             Destroy(gameObject);
             lives = 0;
         }
@@ -139,14 +139,29 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
 
     }
-    public void Restart(){
+    public void Quit(){
+        Application.Quit();
+    }
+
+    public void Restartlvl1(){
         SceneManager.LoadScene("Level1");
         Time.timeScale = 1f;
         Destroy(gameObject);
     }
-    public void Quit(){
-        Application.Quit();
+    public void Restartlvl2(){
+        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1f;
+        Destroy(gameObject);
     }
+    public void Restartlvl3(){
+        SceneManager.LoadScene("Level3");
+        Time.timeScale = 1f;
+        Destroy(gameObject);
+    }
+  public void RestartScene()
+ {
+     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+ }
 
     // GunController interface methods
     private Vector3 MousePos()

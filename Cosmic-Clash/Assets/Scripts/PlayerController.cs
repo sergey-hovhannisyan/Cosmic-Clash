@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Camera mainCam;
     private Vector3 mousePos;
     public GunController gunController;
-
+    public AudioClip gotShot;
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
             isHit = true;
             Destroy(other.gameObject);
             _gameManager.DecrementLives();
+            AudioSource.PlayClipAtPoint(gotShot, transform.position, 1f);
         }
         else if (other.CompareTag("Enemy")){
             isHit = true;

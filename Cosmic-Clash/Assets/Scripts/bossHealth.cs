@@ -23,9 +23,11 @@ public class bossHealth : MonoBehaviour
             currentHealth -=1;
             if (currentHealth <= 0){
                 _gameManager.DecrementObjectiveCounter();
+                Destroy(gameObject);
             }
             if (currentHealth <= 100){
                 GetComponent<BossAI>().difficulty = "hard";
+                GetComponent<bossMovement>().difficulty = "hard";
             }
         }
     }
