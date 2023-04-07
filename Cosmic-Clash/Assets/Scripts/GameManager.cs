@@ -140,13 +140,27 @@ public class GameManager : MonoBehaviour
 
     }
     public void Restart(){
-        SceneManager.LoadScene("Level" + level);
+        LoadPreviousScene();
         Time.timeScale = 1f;
         Destroy(gameObject);
     }
     public void Quit(){
         Application.Quit();
     }
+
+    public void LoadPreviousScene()
+ {
+     if (SceneManager.GetActiveScene().buildIndex > 0 && (SceneManager.GetActiveScene().buildIndex + 1) < SceneManager.sceneCount)
+     {
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+     }
+     else SceneManager.LoadScene("Level1");
+ }
+
+  public void RestartScene()
+ {
+     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+ }
 
     // GunController interface methods
     private Vector3 MousePos()
