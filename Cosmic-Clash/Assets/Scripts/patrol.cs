@@ -5,6 +5,7 @@ using UnityEngine;
 public class patrol : MonoBehaviour
 {
     public Transform[] waypoints;
+    public float shipDimensions = 0.5f;
     private int _currentWaypointIndex = 0;
     private float _speed = 2f;
     private Vector3 scaleChange = new Vector3(-0.1f, 0.0f, 0.0f);
@@ -27,7 +28,7 @@ public class patrol : MonoBehaviour
         Quaternion initialRotation = transform.rotation;
         Quaternion targetRotation = transform.rotation * Quaternion.Euler(0, 180, 0);
 
-        while (transform.localScale.x <= 0.75 && transform.localScale.x >= -0.75)
+        while (transform.localScale.x <= shipDimensions && transform.localScale.x >= -shipDimensions)
         {
             transform.localScale += scaleChange;
             elapsedTime += Time.deltaTime;

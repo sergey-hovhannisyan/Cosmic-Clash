@@ -47,9 +47,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-        if (level == -1) {
-        }
-        else {
+        if (level != -1) {
             if (level == 0) {
                 objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
             }
@@ -63,6 +61,10 @@ public class GameManager : MonoBehaviour
                 instructionText.text = "level0Instruction";
                 OpenInstruction();
             }
+            else if (level == 3) {
+                objectiveUI.text = "Find the Mothership and destroy it!";
+            }
+            OpenInstruction();
             levelUI.text = "Level " + level;
             livesUI.sprite = livesSprites[lives];
         }
@@ -71,7 +73,8 @@ public class GameManager : MonoBehaviour
     public void DecrementObjectiveCounter() {
         objectiveCounter -= 1;
         if (level == 1) objectiveUI.text = "Enemies Remaining: " + objectiveCounter;
-        else objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+        else if(level == 2) objectiveUI.text = "Friends Remaining: " + objectiveCounter;
+        else objectiveUI.text = "Mission Complete";
         if (objectiveCounter <= 0) {
             levelComplete = true;
             objectiveUI.text = "Mission Complete";
