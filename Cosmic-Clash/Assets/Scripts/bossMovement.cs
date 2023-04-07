@@ -5,7 +5,7 @@ public class bossMovement : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public float speed = 2.0f;
-
+    public string difficulty = "easy";
     private Vector3 targetPosition;
 
     void Start()
@@ -15,7 +15,8 @@ public class bossMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        if (difficulty == "hard"){
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed*2 * Time.deltaTime);
 
         if (transform.position == pointA.position)
         {
@@ -25,5 +26,16 @@ public class bossMovement : MonoBehaviour
         {
             targetPosition = pointA.position;
         }
+        }
+        else {transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        if (transform.position == pointA.position)
+        {
+            targetPosition = pointB.position;
+        }
+        else if (transform.position == pointB.position)
+        {
+            targetPosition = pointA.position;
+        }}
     }
 }
