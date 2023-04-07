@@ -80,4 +80,10 @@ public class GunController : MonoBehaviour
         }
     }
 
+    public void UnlockAllWeapons() {
+        gunLocks[0] = true;
+        gunLocks[1] = true;
+        gunLocks[2] = true;
+    }
+
 }
