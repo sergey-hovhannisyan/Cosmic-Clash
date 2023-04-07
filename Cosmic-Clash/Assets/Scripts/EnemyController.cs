@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _gameManager = FindObjectOfType<GameManager>();
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(RandomJump());
         StartCoroutine(RunToPlayer());
         StartCoroutine(RandomShoot());

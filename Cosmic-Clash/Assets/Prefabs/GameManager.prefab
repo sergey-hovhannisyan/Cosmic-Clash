@@ -81,13 +81,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b4d54bec0000f498ddfa9b53ca198a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 10
   level: 0
   levelComplete: 0
   levelUI: {fileID: 0}
   livesUI: {fileID: 0}
   livesSprites:
-  - {fileID: 21300000, guid: ebff4cac539850e448bee66bca934360, type: 3}
-  - {fileID: 21300000, guid: b8529f88eb936804f94fbc8f8fbd330b, type: 3}
-  - {fileID: 21300000, guid: 38ac872cb9bf2d34c9f4a84950eb4098, type: 3}
-  - {fileID: 21300000, guid: fc4f22f564f38a2409a5fb4b14f91b34, type: 3}
+  - {fileID: 21300000, guid: 91fc82976e2b54b48b737f5f535ae9b7, type: 3}
+  - {fileID: 21300000, guid: 3c25e991d23c0c34d8496f979299dade, type: 3}
+  - {fileID: 21300000, guid: 6d6e572e4262bde48aba3073b49083cf, type: 3}
+  - {fileID: 21300000, guid: f9c32fdfffcf1434484b56ce327040a5, type: 3}
+  - {fileID: 21300000, guid: 385b630a397ecb94d8b55e7e2552df15, type: 3}
+  - {fileID: 21300000, guid: 6d6bcc3e7bb5c0c43a49e036d825e999, type: 3}
+  - {fileID: 21300000, guid: 4394d64abbfdd26449bd14200e87e0e7, type: 3}
+  - {fileID: 21300000, guid: 4d6882411de71e7479945db16fd281b9, type: 3}
+  - {fileID: 21300000, guid: 34e20b684835ec84d934377a8b2ff985, type: 3}
+  - {fileID: 21300000, guid: 967d270e9fa1e98409f7602e31cafaff, type: 3}
+  - {fileID: 21300000, guid: f55ac3f543651714380962fb62e42c51, type: 3}
+  pauseMenu: {fileID: 0}
+  objectiveUI: {fileID: 0}
+  objectiveCounter: 0
+  player: {fileID: 0}

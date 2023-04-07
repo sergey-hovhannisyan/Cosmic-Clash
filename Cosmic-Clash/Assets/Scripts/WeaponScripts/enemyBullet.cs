@@ -6,7 +6,7 @@ public class enemyBullet : MonoBehaviour
 
     void Start()
     {
-        Invoke("DestroyBullet", destroyDelay);
+        // Invoke("DestroyBullet", destroyDelay);
     }
 
     void OnTriggerEnter2D(Collider2D other)
