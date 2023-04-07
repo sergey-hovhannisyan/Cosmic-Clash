@@ -9,21 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Welcome.unity
     guid: 8e278a4e1010f804b90a498e29f84cdc
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8d9a97af8cfeae742bb5ac6f6226b6e3
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2170a9f9923bd7842a5da37a40194ea2
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 86c479334d70ff84a92f68d6be288a69
   - enabled: 1
-    path: Assets/Scenes/Game Over.unity
-    guid: 8abb6962e46c67149bc69f03f94d4a09
-  - enabled: 1
-    path: Assets/Scenes/Testing/GenericTrashScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 8d9a97af8cfeae742bb5ac6f6226b6e3
+    path: Assets/Scenes/Level3.unity
+    guid: 597b83e9b4f753c4ab3e1c6c397263e3
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: a0a6e6f8e3e60ff42a2dea5ede71ffd1
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 8abb6962e46c67149bc69f03f94d4a09
+  - enabled: 1
+    path: Assets/Scenes/Game Over 1.unity
+    guid: 4515bfcde26392b4d9026b2e00493a80
+  - enabled: 1
+    path: Assets/Scenes/Game Over 2.unity
+    guid: eb5191ecd9a3cf64cb6c640f126421d4
+  - enabled: 1
+    path: Assets/Scenes/Game Over 3.unity
+    guid: 897988f4fed12964cb240191082667bc
   m_configObjects: {}

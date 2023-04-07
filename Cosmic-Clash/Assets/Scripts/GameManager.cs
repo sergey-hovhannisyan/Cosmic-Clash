@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void DecrementLives() {
         lives -= 1;
         if (lives <= 0) {
-            SceneManager.LoadScene("Game Over");
+            SceneManager.LoadScene("Game Over " + level);
             Destroy(gameObject);
             lives = 0;
         }
@@ -139,24 +139,25 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
 
     }
-    public void Restart(){
-        LoadPreviousScene();
-        Time.timeScale = 1f;
-        Destroy(gameObject);
-    }
     public void Quit(){
         Application.Quit();
     }
 
-    public void LoadPreviousScene()
- {
-     if (SceneManager.GetActiveScene().buildIndex > 0 && (SceneManager.GetActiveScene().buildIndex + 1) < SceneManager.sceneCount)
-     {
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-     }
-     else SceneManager.LoadScene("Level1");
- }
-
+    public void Restartlvl1(){
+        SceneManager.LoadScene("Level1");
+        Time.timeScale = 1f;
+        Destroy(gameObject);
+    }
+    public void Restartlvl2(){
+        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1f;
+        Destroy(gameObject);
+    }
+    public void Restartlvl3(){
+        SceneManager.LoadScene("Level3");
+        Time.timeScale = 1f;
+        Destroy(gameObject);
+    }
   public void RestartScene()
  {
      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
