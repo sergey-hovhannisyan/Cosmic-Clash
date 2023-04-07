@@ -11,7 +11,7 @@ public class GunController : MonoBehaviour
     GunScript[] gunScripts;
     public GameObject gunHolder;
 
-    private int totalGunsAvailable;
+    public int totalGunsAvailable;
     private bool[] gunLocks;
     private GameManager gameManager;
 
