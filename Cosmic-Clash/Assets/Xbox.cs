@@ -25,12 +25,12 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Player"",
-            ""id"": ""584f456e-f7f9-4b31-b1f7-85d340076ad9"",
+            ""id"": ""89eae5fc-6729-4f6d-b497-0c3be1fb6550"",
             ""actions"": [
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""ba183b17-c340-4282-bfbf-07ab17bf2e5a"",
+                    ""id"": ""0107e3c4-4283-40b7-81b2-1d2142c19c29"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,7 +39,7 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""b1ae948e-36aa-493b-a5f7-2480dfd25424"",
+                    ""id"": ""aa40fe4a-0f42-4fe1-bbf7-7b0505a74fa3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,7 +48,7 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Shoot"",
                     ""type"": ""Button"",
-                    ""id"": ""81f239b3-e14c-421e-a0f1-1dd18383a1b7"",
+                    ""id"": ""07d85f1f-ea27-43de-b764-593eadc11b90"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -58,18 +58,18 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""62d52052-6c76-4675-8dd8-ba0c0da2639a"",
+                    ""id"": ""6ebb05f8-79b6-41fa-975b-fe174800c19d"",
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""07e2084f-9c30-4174-97c0-6cdc5d342950"",
+                    ""id"": ""e01a16d7-9bc2-4193-8005-3adf548b429e"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -80,55 +80,55 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""f659c2f5-085b-4494-9894-59797f933da9"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""id"": ""40ff60d7-cc88-433c-96e5-c623a1f3f992"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""6ebff879-3d2b-41b0-bf93-afd97060ffd4"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""id"": ""ae6c7ea3-1363-4b21-a588-cdf0879e4df8"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""8908ebd5-7154-4f7d-9202-e4e1d1e99e33"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""id"": ""0741a591-b18a-4de6-90b8-2bc8e49570be"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""029adb86-6f21-426d-a339-ce8c953f674a"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""f32594f2-548b-4b00-bdfa-f9e414bb23e5"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""769dca95-85ee-4af0-9634-236179e7fefb"",
+                    ""id"": ""0700dbca-a0bd-4438-912d-2af28a677efa"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -136,19 +136,7 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""Xbox"",
-            ""bindingGroup"": ""Xbox"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<XInputController>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        }
-    ]
+    ""controlSchemes"": []
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
@@ -259,15 +247,6 @@ public partial class @Xbox : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-    private int m_XboxSchemeIndex = -1;
-    public InputControlScheme XboxScheme
-    {
-        get
-        {
-            if (m_XboxSchemeIndex == -1) m_XboxSchemeIndex = asset.FindControlSchemeIndex("Xbox");
-            return asset.controlSchemes[m_XboxSchemeIndex];
-        }
-    }
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
