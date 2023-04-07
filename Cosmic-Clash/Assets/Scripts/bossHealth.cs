@@ -6,12 +6,13 @@ using TMPro;
 
 public class bossHealth : MonoBehaviour
 {
+    
     public int totalHealth = 200;
     public float currentHealth = 200.0f;
     public TextMeshProUGUI healthText;
     public Image healthBar;  
     public GameManager _gameManager;
-
+    private GameObject[] enemies;
     private void Start() {
         _gameManager = FindObjectOfType<GameManager>();
     }
