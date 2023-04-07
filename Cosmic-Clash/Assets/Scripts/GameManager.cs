@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             }
             else if (level == 3) {
                 objectiveUI.text = "Destroy the Mothership!";
-                OpenInstruction("Destroy the Mothership!");
+                //OpenInstruction("Destroy the Mothership!");
                 playerGunController.UnlockAllWeapons();
             }
             levelUI.text = "Level " + level;
