@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1034577120775079946, guid: 76d936fcd579f3343aa6811bb698776e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.127062
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034577120775079946, guid: 76d936fcd579f3343aa6811bb698776e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.3049364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034577120775079946, guid: 76d936fcd579f3343aa6811bb698776e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034577120775079946, guid: 76d936fcd579f3343aa6811bb698776e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.029
+      objectReference: {fileID: 0}
     - target: {fileID: 1128377866757335729, guid: 76d936fcd579f3343aa6811bb698776e, type: 3}
       propertyPath: m_Name
       value: shootingSpaceship (medium)
