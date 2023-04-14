@@ -14,18 +14,22 @@ TagManager:
   - Laser
   - Drone
   - missile
+  - shotgun
+  - laser
+  - rifle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Water
+  - Water
   - UI
-  - Player
   - Platform
   - Enemy
   - PlayerMiniMap
   - EnemyMiniMap
   - MiniMap
+  - 
   - 
   - 
   - 
