@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
+    public bool alive = true;
     public GameObject healthBar;
     GameManager _gameManager;
     void Start(){
@@ -18,8 +19,12 @@ public class enemyHealth : MonoBehaviour
         Debug.Log("here");
         if (other.gameObject.CompareTag("Bullet"))
         {
-            if (DecrementLives()) {
-                if (_gameManager.level != 2 && _gameManager.level != 3) _gameManager.DecrementObjectiveCounter();
+            if (DecrementLives() && alive) {
+                if (_gameManager.level != 2 && _gameManager.level != 3)
+                {
+                    alive = false;
+                    _gameManager.DecrementObjectiveCounter();
+                }
                 Destroy(gameObject);
             };
             Destroy(other.gameObject);
