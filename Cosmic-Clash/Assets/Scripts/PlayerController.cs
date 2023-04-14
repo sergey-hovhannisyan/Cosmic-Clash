@@ -133,11 +133,11 @@ public class PlayerController : MonoBehaviour
             _gameManager.DecrementLives();
             AudioSource.PlayClipAtPoint(gotShot, transform.position, 1f);
         }
-        else if (other.CompareTag("Enemy")){
-            isHit = true;
-            other.GetComponent<enemyHealth>().DecrementLives();
-            _gameManager.DecrementLives();
-        }
+        // else if (other.CompareTag("Enemy")){
+        //     isHit = true;
+        //     other.GetComponent<enemyHealth>().DecrementLives();
+        //     _gameManager.DecrementLives();
+        // }
         yield return new WaitForSeconds(0.2f);
         isHit = false;
     }
