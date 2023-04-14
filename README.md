@@ -3,7 +3,7 @@ Cosmic Clash is a mission-driven shooter game centered around defending the univ
 
 Compatible with Xbox controllers
 
-## ___Cosmic Clash - Game Development Process and Playtesting___
+## ___Game Development Process and Playtesting___
 
 Hello everyone,
 
